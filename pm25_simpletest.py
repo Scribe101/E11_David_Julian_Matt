@@ -96,6 +96,7 @@ while continuing:
     f.write('\n')
     import csv
     f = open("data.csv","w",newline='')
+    writer = csv.writer(f)
     writer.writerow(meta_data)
     writer.writerow(data)
     f.close()
