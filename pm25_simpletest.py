@@ -85,21 +85,22 @@ while continuing:
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
     
+    
+    #meta_data = ["Time", "Particles > 0.3um / 0.1L air", "Particles > 0.5um / 0.1L air", "Particles > 1.0um / 0.1L air", "Particles > 2.5um / 0.1L air", "Particles > 5.0um / 0.1L air", "Particles > 10 um / 0.1L air"]
+    #data = [itime,aqdata["particles 03um"],aqdata["particles 05um"],aqdata["particles 10um"],aqdata["particles 25um"],aqdata["particles 50um"],aqdata["particles 100um"]]
+    meta_data = ["PM 1.0","PM2.5","PM10"]
+    data = [aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]]
+    f = open("data.csv","w")
+    for entry in meta_data:
+        f.write(entry+',')
+    f.write('\n')
+    for idata in data:
+        f.write(str(idata)+',')
+    f.write('\n')
+    import csv
+    f = open("data.csv","w",newline='')
+    writer = csv.writer(f)
+    writer.writerow(meta_data)
+    writer.writerow(data)
     if not continuing:
-        #meta_data = ["Time", "Particles > 0.3um / 0.1L air", "Particles > 0.5um / 0.1L air", "Particles > 1.0um / 0.1L air", "Particles > 2.5um / 0.1L air", "Particles > 5.0um / 0.1L air", "Particles > 10 um / 0.1L air"]
-        #data = [itime,aqdata["particles 03um"],aqdata["particles 05um"],aqdata["particles 10um"],aqdata["particles 25um"],aqdata["particles 50um"],aqdata["particles 100um"]]
-        meta_data = ["PM 1.0","PM2.5","PM10"]
-        data = [aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]]
-        f = open("data.csv","w")
-        for entry in meta_data:
-            f.write(entry+',')
-        f.write('\n')
-        for idata in data:
-            f.write(str(idata)+',')
-        f.write('\n')
-        import csv
-        f = open("data.csv","w",newline='')
-        writer = csv.writer(f)
-        writer.writerow(meta_data)
-        writer.writerow(data)
         f.close()
