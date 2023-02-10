@@ -47,6 +47,8 @@ pm25 = PM25_UART(uart, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
 
+f = open("data.csv","w")
+
 continuing = True
 start_time = time.time()
 while continuing:
@@ -90,7 +92,7 @@ while continuing:
     #data = [itime,aqdata["particles 03um"],aqdata["particles 05um"],aqdata["particles 10um"],aqdata["particles 25um"],aqdata["particles 50um"],aqdata["particles 100um"]]
     meta_data = ["PM 1.0","PM2.5","PM10"]
     data = [aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]]
-    f = open("data.csv","w")
+    #f = open("data.csv","w")
     for entry in meta_data:
         f.write(entry+',')
     f.write('\n')
