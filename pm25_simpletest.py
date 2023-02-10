@@ -47,11 +47,11 @@ pm25 = PM25_UART(uart, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
 
-continuing = true
+continuing = True
 start_time = time.time()
 while continuing:
     if time.time() > start_time + 8:
-        continuing = false
+        continuing = False
     time.sleep(1)
 
     try:
