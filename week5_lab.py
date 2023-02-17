@@ -20,7 +20,7 @@ bme680.sea_level_pressure = 1013.25
 reset_pin = None
 
 import serial
-uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=0.25)
+uart = serial.Serial("/dev/ttyS0", baudrate=9600, timeout=0.95)
 
 from adafruit_pm25.uart import PM25_UART
 pm25 = PM25_UART(uart, reset_pin)
