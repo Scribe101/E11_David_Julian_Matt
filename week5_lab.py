@@ -16,8 +16,10 @@ f = open("data2.csv","w",newline='')
 writer = csv.writer(f)
 writer.writerow(meta_data)
 
+continuing = True
 
-while itime < start_time + run_time:
+#while itime < start_time + run_time:
+while continuing:
   print()
   itime = time.time()
   print("Time: "+str(itime))
@@ -46,5 +48,7 @@ while itime < start_time + run_time:
   #data = [itime,aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]]
   data = [itime, random.random(), random.random(), random.random()]
   writer.writerow(data)
-  if time.time() >= start_time + run_time:
-      f.close()
+  if itime > start_time + run_time:
+  #if time.time() >= start_time + run_time:
+    continuing = False
+    f.close()
