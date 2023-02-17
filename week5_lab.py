@@ -7,6 +7,14 @@ itime = start_time
 run_time = 10
 if len(sys.argv) > 1:
   run_time = int(sys.argv[1])
+  
+  
+f = open("data2.csv","w")
+meta_data = ["Time","PM 1.0","PM2.5","PM10"]
+import csv
+f = open("data2.csv","w",newline='')
+writer = csv.writer(f)
+writer.writerow(meta_data)
 
 
 while itime < start_time + run_time:
@@ -34,3 +42,9 @@ while itime < start_time + run_time:
   print("Particles > 10 um / 0.1L air:", random.random())
   print("---------------------------------------")
   time.sleep(1)
+  
+  #data = [itime,aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]]
+  data = [itime, random.random(), random.random(), random.random()]
+  writer.writerow(data)
+  if time.time() >= start_time + run_time:
+      f.close()
