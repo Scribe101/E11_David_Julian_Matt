@@ -6,7 +6,6 @@ start_time = int(time.time())
 itime = start_time
 run_time = 10
 if len(sys.argv) > 1:
-  print("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
   run_time = int(sys.argv[1])
 
 
