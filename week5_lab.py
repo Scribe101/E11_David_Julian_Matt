@@ -17,8 +17,6 @@ writer = csv.writer(f)
 writer.writerow(meta_data)
 
 continuing = True
-
-#while itime < start_time + run_time:
 while continuing:
   print()
   itime = time.time()
@@ -49,6 +47,5 @@ while continuing:
   data = [itime, random.random(), random.random(), random.random()]
   writer.writerow(data)
   if itime > start_time + run_time:
-  #if time.time() >= start_time + run_time:
     continuing = False
     f.close()
