@@ -75,7 +75,7 @@ while continuing:
   print("---------------------------------------")
   
   #############################################
-  print("Time: ", time.time(), "\nTemperature: %0.1f C" % bme680.temperature, "  Gas: %d ohm" % bme680.gas, "  Humidity: %0.1f %%" % bme680.relative_humidity, "  Pressure: %0.3f hPa" % bme680.pressure, "  Altitude = %0.2f meters" % bme680.altitude)
+  #print("Time: ", time.time(), "\nTemperature: %0.1f C" % bme680.temperature, "  Gas: %d ohm" % bme680.gas, "  Humidity: %0.1f %%" % bme680.relative_humidity, "  Pressure: %0.3f hPa" % bme680.pressure, "  Altitude = %0.2f meters" % bme680.altitude)
   time.sleep(1)
   
   #data = [itime,aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
