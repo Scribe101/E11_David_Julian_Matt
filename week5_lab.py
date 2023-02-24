@@ -33,10 +33,10 @@ if len(sys.argv) > 1:
   run_time = int(sys.argv[1])
   
   
-f = open("data3.csv","w")
+f = open("data4.csv","w")
 meta_data = ["Time","PM 1.0","PM2.5","PM10","Temperature","Gas","Humidity","Pressure","Altitude"]
 import csv
-f = open("data3.csv","w",newline='')
+f = open("data4.csv","w",newline='')
 writer = csv.writer(f)
 writer.writerow(meta_data)
 
