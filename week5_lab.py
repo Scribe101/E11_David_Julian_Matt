@@ -28,7 +28,7 @@ pm25 = PM25_UART(uart, reset_pin)
 
 start_time = int(time.time())
 itime = start_time
-run_time = 5
+run_time = 480
 if len(sys.argv) > 1:
   run_time = int(sys.argv[1])
   
