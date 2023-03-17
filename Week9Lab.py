@@ -17,8 +17,9 @@ startTime=int(time.time())
 iTime=startTime
 count = 0
 list_of_times = []
+originalStart = int(time.time())
 
-while iTime < (startTime + 13):
+while iTime < (originalStart + 13):
  temp = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout = 1000)
  if temp is None:
   print("Timeout")
