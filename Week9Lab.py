@@ -8,8 +8,8 @@ GPIO.setup(channel, GPIO.IN)
 
 startTime=int(time.time())
 iTime=startTime
-counts = 0
-while iTime < (startTime + 60):
+count = 0
+while iTime < (startTime + 12):
  temp = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout = 5000)
  if temp is None:
   print("Timeout")
@@ -22,4 +22,4 @@ while iTime < (startTime + 60):
  #time.sleep(0.001)
  iTime = int(time.time())
  
-print("Total Counts:" + str(counts))
+print("Total Counts:" + str(count))
