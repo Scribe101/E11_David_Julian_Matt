@@ -8,8 +8,6 @@ channel = 3
 #GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
- GPIO.setmode(GPIO.BCM)
- GPIO.setup(6, GPIO.IN)
  
 
 def my_callback(channel):
