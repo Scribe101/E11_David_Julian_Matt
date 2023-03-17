@@ -6,7 +6,7 @@ channel = 2
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
 
-f = open("data.csv","w")
+f = open("data5.csv","w")
 meta_data = ["CPM","Time Tags"]
 import csv
 f = open("data5.csv","w",newline='')
@@ -39,3 +39,4 @@ while iTime < (startTime + 13):
   start = int(time.time())
  
 print("Total Counts:" + str(count))
+f.close()
