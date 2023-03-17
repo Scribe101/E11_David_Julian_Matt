@@ -1,6 +1,6 @@
 # coding=utf-8
  
-import RPi.GPIO_2 as GPIO
+import RPi.GPIO as GPIO
 import datetime
  
 def my_callback(channel):
@@ -14,7 +14,7 @@ try:
     GPIO.setup(6, GPIO.IN)
     GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
  
-#    message = raw_input('\nPress any key to exit.\n')
+    message = raw_input('\nPress any key to exit.\n')
  
 finally:
     GPIO.cleanup()
