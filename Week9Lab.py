@@ -18,7 +18,7 @@ def my_callback(channel):
 try:
  GPIO.setmode(GPIO.BCM)
  GPIO.setup(6, GPIO.IN)
- channel = GPIO.wait_for_edge(channel, GPIO.RISING, timeout=5000)
+ channel = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout=5000)
  GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
 
 
