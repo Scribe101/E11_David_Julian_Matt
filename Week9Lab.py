@@ -6,6 +6,12 @@ import time
 channel = 3
 #GPIO.setmode(GPIO.BOARD)
 #GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+
+ GPIO.setmode(GPIO.BCM)
+ GPIO.setup(6, GPIO.IN)
+ 
+
 def my_callback(channel):
     if GPIO.input(channel) == GPIO.HIGH:
         print('\n▼  at ' + str(datetime.datetime.now()))
@@ -14,9 +20,6 @@ def my_callback(channel):
 
 
 
- GPIO.setmode(GPIO.BCM)
- GPIO.setup(6, GPIO.IN)
- 
 try:
  GPIO.setmode(GPIO.BCM)
  GPIO.setup(6, GPIO.IN)
