@@ -1,6 +1,6 @@
 # coding=utf-8
  
-import RPi.GPIO as GPIO
+import RPi.GPIO2 as GPIO
 import datetime
  
 def my_callback(channel):
