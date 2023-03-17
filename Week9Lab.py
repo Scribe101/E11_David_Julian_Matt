@@ -13,11 +13,13 @@ def my_callback(channel):
         print('\n ▲ at ' + str(datetime.datetime.now()))
 
 
+
+
 try:
  GPIO.setmode(GPIO.BCM)
  GPIO.setup(6, GPIO.IN)
- GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
  channel = GPIO.wait_for_edge(channel, GPIO.RISING, timeout=5000)
+ GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
 
 
 
