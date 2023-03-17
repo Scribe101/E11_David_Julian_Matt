@@ -2,6 +2,7 @@
  
 import RPi.GPIO as GPIO
 import datetime
+import time
 #channel = 3
 def my_callback(channel):
     if GPIO.input(channel) == GPIO.HIGH:
