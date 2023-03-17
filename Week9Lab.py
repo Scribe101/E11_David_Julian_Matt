@@ -36,5 +36,5 @@ while iTime < (originalStart + 140):
   list_of_times = []
   startTime = int(time.time())
  
-print("Total Counts:" + str(count))
+print("Total Counts Since Last Minute:" + str(count))
 f.close()
