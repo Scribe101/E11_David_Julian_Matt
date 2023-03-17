@@ -14,7 +14,9 @@ def my_callback(channel):
 
 
 
-
+ GPIO.setmode(GPIO.BCM)
+ GPIO.setup(6, GPIO.IN)
+ 
 try:
  GPIO.setmode(GPIO.BCM)
  GPIO.setup(6, GPIO.IN)
