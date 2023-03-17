@@ -25,6 +25,7 @@ while iTime < (originalStart + 140):
   print("Timeout")
  else:
   count = count + 1
+  print(str(datetime.datetime.now()))
   list_of_times.append(str(datetime.datetime.now()))
  iTime = int(time.time())
  if iTime > (startTime + 60):
