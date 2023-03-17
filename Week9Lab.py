@@ -8,14 +8,15 @@ def my_callback(channel):
         print('\n▼  at ' + str(datetime.datetime.now()))
     else:
         print('\n ▲ at ' + str(datetime.datetime.now())) 
-start = datetime.time()
+      
+start = int(time.time())
 iTime = start
 while(iTime < start + 5):
  GPIO.setmode(GPIO.BCM)
  GPIO.setup(6, GPIO.IN)
  GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
  time.sleep(1)
- iTime = datetime.time()
+ iTime = int(time.time())
 """
 try:
     GPIO.setmode(GPIO.BCM)
