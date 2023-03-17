@@ -6,12 +6,19 @@ channel = 2
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
 
+f = open("data.csv","w")
+meta_data = ["CPM","Time Tags"]
+import csv
+f = open("data5.csv","w",newline='')
+writer = csv.writer(f)
+writer.writerow(meta_data)
+
 startTime=int(time.time())
 iTime=startTime
 count = 0
 list_of_times = []
-list_of_cpm = []
-while iTime < (startTime + 5):
+
+while iTime < (startTime + 13):
  temp = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout = 5000)
  if temp is None:
   print("Timeout")
@@ -24,9 +31,11 @@ while iTime < (startTime + 5):
  list_of_times.append(str(datetime.datetime.now()))
  #time.sleep(0.001)
  iTime = int(time.time())
- if iTime > (start + 60):
-  list_of_cpm.append(count)
+ if iTime > (start + 3):
+  data = [str(count),str(list_of_times)]
+  writer.writerow(data)
   count = 0
+  list_of_times = []
   start = int(time.time())
  
 print("Total Counts:" + str(count))
