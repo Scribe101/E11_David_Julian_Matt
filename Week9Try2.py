@@ -8,7 +8,8 @@ GPIO.setup(channel, GPIO.IN)
 
 i = 0
 while i < 10:
- GPIO.wait_for_edge(channel, GPIO.FALLING""", timeout=5000""")
+ GPIO.wait_for_edge(channel, GPIO.FALLING)
+ # timeout
  print(str(datetime.datetime.now()))
  i = i + 1
  time.sleep(0.001)
