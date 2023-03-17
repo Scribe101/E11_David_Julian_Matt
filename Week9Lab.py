@@ -2,7 +2,7 @@
  
 import RPi.GPIO as GPIO
 import datetime
-channel = 3
+#channel = 3
 def my_callback(channel):
     if GPIO.input(channel) == GPIO.HIGH:
         print('\n▼  at ' + str(datetime.datetime.now()))
@@ -11,8 +11,8 @@ def my_callback(channel):
  
 try:
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(6, GPIO.IN)
-    GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
+    GPIO.setup(3, GPIO.IN)
+    GPIO.add_event_detect(3, GPIO.BOTH, callback=my_callback)
  
     message = raw_input('\nPress any key to exit.\n')
  
