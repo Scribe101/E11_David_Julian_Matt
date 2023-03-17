@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import datetime
 import time
 
-channel = 2 # or maybe 3
+channel = 3 # or maybe 3
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
 
