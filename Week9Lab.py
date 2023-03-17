@@ -18,24 +18,10 @@ try:
  GPIO.setup(6, GPIO.IN)
  GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
 
-"""
-start = int(time.time())
-iTime = start
-while(iTime < start + 10):
- GPIO.setmode(GPIO.BCM)
- GPIO.setup(6, GPIO.IN)
- GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
- #channel = GPIO.wait_for_edge(channel, GPIO.RISING, timeout=5000)
- iTime = int(time.time())
- 
 
-try:
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(6, GPIO.IN)
-    GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
- 
-    message = raw_input('\nPress any key to exit.\n')
-"""
+
+
+
 finally:
     GPIO.cleanup()
  
