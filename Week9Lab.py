@@ -23,8 +23,9 @@ try:
     GPIO.add_event_detect(6, GPIO.BOTH, callback=my_callback)
  
     message = raw_input('\nPress any key to exit.\n')
-"""
+
 finally:
     GPIO.cleanup()
- 
+ """
+GPIO.cleanup()
 print("Goodbye!")
