@@ -31,12 +31,12 @@ while iTime < (startTime + 13):
  list_of_times.append(str(datetime.datetime.now()))
  #time.sleep(0.001)
  iTime = int(time.time())
- if iTime > (start + 3):
+ if iTime > (startTime + 3):
   data = [str(count),str(list_of_times)]
   writer.writerow(data)
   count = 0
   list_of_times = []
-  start = int(time.time())
+  startTime = int(time.time())
  
 print("Total Counts:" + str(count))
 f.close()
