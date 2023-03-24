@@ -17,7 +17,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
 
 f = open(output_file_name,"w")
-meta_data = ["CPM","Time Tags"]
+meta_data = ["Counts in Interval","Time Period"]
 import csv
 f = open(output_file_name,"w",newline='')
 writer = csv.writer(f)
@@ -41,7 +41,7 @@ while iTime < (originalStart + int(run_time)):
  iTime = int(time.time())
  if iTime > (startTime + int(count_per_entry)):
   end_point = str(datetime.datetime.now())
-  str1 = start_point + "<> to <>" + end_point
+  str1 = start_point + "  to  " + end_point
   data = [str(count),str1]
   writer.writerow(data)
   print("Counts in the last minute: " + str(count))
