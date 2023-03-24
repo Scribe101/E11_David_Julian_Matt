@@ -1,12 +1,22 @@
 import RPi.GPIO as GPIO
 import datetime
 import time
+import sys
+if len(sys.argv) > 1:
+ run_time = sys.argv[0]
+ if len(sys.argv) > 2:
+  count_per_entry = sys.argv[1]
+  if len(sys.argv) > 3:
+   output_file_name = sys.argv[2]
+   output_file_name = output_file_name + ".csv"
+  
+
 
 channel = 2
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
 
-f = open("data5.csv","w")
+f = open(output_file_name,"w")
 meta_data = ["CPM","Time Tags"]
 import csv
 f = open("data5.csv","w",newline='')
@@ -19,7 +29,7 @@ count = 0
 list_of_times = []
 originalStart = int(time.time())
 
-while iTime < (originalStart + 140):
+while iTime < (originalStart + int(run_time)):
  temp = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout = 1000)
  if temp is None:
   print("Timeout")
