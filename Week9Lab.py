@@ -6,7 +6,7 @@ if len(sys.argv) > 1:
  run_time = sys.argv[1]
  if len(sys.argv) > 2:
   count_per_entry = sys.argv[2]
-  count_per_entry = int(count_per_entry) - 1
+  #count_per_entry = int(count_per_entry) - 1
   if len(sys.argv) > 3:
    output_file_name = sys.argv[3]
    output_file_name = output_file_name + ".csv"
