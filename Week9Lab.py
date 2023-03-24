@@ -32,7 +32,7 @@ originalStart = int(time.time())
 while iTime < (originalStart + int(run_time)):
  temp = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout = 1000)
  if temp is None:
-  #print("Timeout")
+  print("Timeout")
  else:
   count = count + 1
   #print(str(datetime.datetime.now()))
