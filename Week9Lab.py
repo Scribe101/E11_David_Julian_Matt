@@ -19,7 +19,7 @@ GPIO.setup(channel, GPIO.IN)
 f = open(output_file_name,"w")
 meta_data = ["CPM","Time Tags"]
 import csv
-f = open("data5.csv","w",newline='')
+f = open(output_file_name,"w",newline='')
 writer = csv.writer(f)
 writer.writerow(meta_data)
 
