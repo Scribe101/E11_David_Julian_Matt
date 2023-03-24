@@ -28,6 +28,7 @@ iTime=startTime
 count = 0
 list_of_times = []
 originalStart = int(time.time())
+start_point = str(datetime.datetime.now())
 
 while iTime < (originalStart + int(run_time)):
  temp = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout = 1000)
@@ -39,12 +40,15 @@ while iTime < (originalStart + int(run_time)):
   list_of_times.append(str(datetime.datetime.now()))
  iTime = int(time.time())
  if iTime > (startTime + int(count_per_entry)):
-  data = [str(count),str(list_of_times)]
+  end_point = str(datetime.datetime.now())
+  str1 = start_point + end_point
+  data = [str(count),str1]
   writer.writerow(data)
   print("Counts in the last minute: " + str(count))
   count = 0
   list_of_times = []
   startTime = int(time.time())
+  start_point = str(datetime.datetime.now())
  
 print("Total Counts Since Last Minute:" + str(count))
 f.close()
