@@ -35,13 +35,13 @@ while iTime < (originalStart + int(run_time)):
   print("Timeout")
  else:
   count = count + 1
-  #print(str(datetime.datetime.now()))
+  print(str(datetime.datetime.now()))
   list_of_times.append(str(datetime.datetime.now()))
  iTime = int(time.time())
  if iTime > (startTime + int(count_per_entry)):
   data = [str(count),str(list_of_times)]
   writer.writerow(data)
-  #print("Counts in the last minute: " + str(count))
+  print("Counts in the last minute: " + str(count))
   count = 0
   list_of_times = []
   startTime = int(time.time())
