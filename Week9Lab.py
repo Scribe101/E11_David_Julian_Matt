@@ -32,16 +32,16 @@ originalStart = int(time.time())
 while iTime < (originalStart + int(run_time)):
  temp = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout = 1000)
  if temp is None:
-  print("Timeout")
+  #print("Timeout")
  else:
   count = count + 1
-  print(str(datetime.datetime.now()))
+  #print(str(datetime.datetime.now()))
   list_of_times.append(str(datetime.datetime.now()))
  iTime = int(time.time())
- if iTime > (startTime + 60):
+ if iTime > (startTime + int(count_per_entry)):
   data = [str(count),str(list_of_times)]
   writer.writerow(data)
-  print("Counts in the last minute: " + str(count))
+  #print("Counts in the last minute: " + str(count))
   count = 0
   list_of_times = []
   startTime = int(time.time())
