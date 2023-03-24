@@ -6,6 +6,7 @@ if len(sys.argv) > 1:
  run_time = sys.argv[1]
  if len(sys.argv) > 2:
   count_per_entry = sys.argv[2]
+  count_per_entry = count_per_entry - 1
   if len(sys.argv) > 3:
    output_file_name = sys.argv[3]
    output_file_name = output_file_name + ".csv"
@@ -31,7 +32,7 @@ originalStart = int(time.time())
 start_point = str(datetime.datetime.now())
 
 while iTime < (originalStart + int(run_time)):
- temp = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout = 100)
+ temp = GPIO.wait_for_edge(channel, GPIO.FALLING, timeout = 1000)
  if temp is None:
   print("Timeout")
  else:
