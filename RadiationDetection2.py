@@ -13,7 +13,7 @@ if len(sys.argv) > 1:
   
 
 
-channel = 17
+channel = 3
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
 
